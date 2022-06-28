@@ -4,12 +4,12 @@ import { cartActions } from '../../store/cart-slice';
 import { useDispatch } from 'react-redux';
 
 const ProductItem = (props) => {
-  const { title, price, description } = props;
+  const { title, price, description, id } = props;
 
   const dispatch = useDispatch()
 
-  const increasetotalAmount = () => {
-    dispatch(cartActions.add())
+  const addItemToCart = () => {
+    dispatch(cartActions.addItem({ id: id, title: title, price: price }))
   }
 
   return (
@@ -21,7 +21,7 @@ const ProductItem = (props) => {
         </header>
         <p>{description}</p>
         <div className={classes.actions}>
-          <button onClick={increasetotalAmount}>Add to Cart</button>
+          <button onClick={addItemToCart}>Add to Cart</button>
         </div>
       </Card>
     </li>

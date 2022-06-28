@@ -4,23 +4,25 @@ import { useDispatch } from 'react-redux';
 
 const CartItem = (props) => {
 
-  const { title, quantity, total, price } = props.item;
+  const { title, quantity, price, id } = props.item;
 
   const reducer = useDispatch()
 
   const increasetotalAmount = () => {
-    reducer(cartActions.addItem())
+    reducer(cartActions.addItem({ id: id, title: title, price: price }))
   }
   const decreasetotalAmount = () => {
-    reducer(cartActions.removeItem())
+    reducer(cartActions.removeItem({ id: id }))
   }
+
+  const totalMoney = price * quantity
 
   return (
     <li className={classes.item}>
       <header>
         <h3>{title}</h3>
         <div className={classes.price}>
-          ${total.toFixed(2)}{' '}
+          ${totalMoney.toFixed(2)}{' '}
           <span className={classes.itemprice}>(${price.toFixed(2)}/item)</span>
         </div>
       </header>
