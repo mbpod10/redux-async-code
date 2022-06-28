@@ -23,11 +23,6 @@ const Products = (props) => {
       <h2>Buy your favorite products</h2>
       <ul>
         {itemsArray}
-        {/* <ProductItem
-          title='Test'
-          price={6}
-          description='This is a first product - amazing!'
-        /> */}
       </ul>
     </section>
   );

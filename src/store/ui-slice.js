@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-const initiaUISTate = { showCart: false }
+const initiaUISTate = { showCart: false, notification: null }
 
 const uiSlice = createSlice({
   name: 'ui',
@@ -9,8 +9,13 @@ const uiSlice = createSlice({
     toggleShowCart(state) {
       state.showCart = !state.showCart
     },
-    addToCart(state, action) {
-      console.log(action)
+
+    showNotification(state, action) {
+      state.notification = {
+        status: action.payload.status,
+        message: action.payload.message,
+        title: action.payload.title,
+      }
     }
   }
 })
