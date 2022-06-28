@@ -8,7 +8,7 @@ const ProductItem = (props) => {
 
   const dispatch = useDispatch()
 
-  const increaseAmount = () => {
+  const increasetotalAmount = () => {
     dispatch(cartActions.add())
   }
 
@@ -21,7 +21,7 @@ const ProductItem = (props) => {
         </header>
         <p>{description}</p>
         <div className={classes.actions}>
-          <button onClick={increaseAmount}>Add to Cart</button>
+          <button onClick={increasetotalAmount}>Add to Cart</button>
         </div>
       </Card>
     </li>

@@ -1,16 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-const initialCartState = { amount: 0 }
+const initialCartState = {
+  totalAmount: 0,
+  items: [
+    { id: 1, title: 'Nerf Gun', quantity: 0, total: 0, price: 6 },
+    { id: 2, title: 'Keyboard', quantity: 0, total: 0, price: 15 },
+  ]
+}
 
 const cartSlice = createSlice({
   name: 'cart',
   initialState: initialCartState,
   reducers: {
-    add(state) {
-      state.amount++
+    addItem(state, action) {
+      state.totalAmount++
     },
-    subtract(state) {
-      state.amount--
+    removeItem(state, action) {
+      state.totalAmount--
     }
   }
 })

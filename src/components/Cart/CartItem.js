@@ -8,11 +8,11 @@ const CartItem = (props) => {
 
   const reducer = useDispatch()
 
-  const increaseAmount = () => {
-    reducer(cartActions.add())
+  const increasetotalAmount = () => {
+    reducer(cartActions.addItem())
   }
-  const decreaseAmount = () => {
-    reducer(cartActions.subtract())
+  const decreasetotalAmount = () => {
+    reducer(cartActions.removeItem())
   }
 
   return (
@@ -29,8 +29,8 @@ const CartItem = (props) => {
           x <span>{quantity}</span>
         </div>
         <div className={classes.actions}>
-          <button onClick={decreaseAmount}>-</button>
-          <button onClick={increaseAmount}>+</button>
+          <button onClick={decreasetotalAmount}>-</button>
+          <button onClick={increasetotalAmount}>+</button>
         </div>
       </div>
     </li>

@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-const initiaUISTate = { showCart: true }
+const initiaUISTate = { showCart: false }
 
 const uiSlice = createSlice({
   name: 'ui',
